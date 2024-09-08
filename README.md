@@ -2,7 +2,7 @@ DeepDanBooru Scripts
 
 - `crawl.py` - this goes through an images directory and generates tags and scores for each image it finds. The results are stored in a sqlite db.
 - `display` - generates an web page displaying images, tags, and scores
-- `web.py` - a web UI for uploading a single image which returns tags and scores for it.
+- `web.py` - a web UI for uploading a single image which returns tags and scores for it. Taken from https://github.com/KichangKim/DeepDanbooru/issues/94#issuecomment-1557571288.
 
 Set Up
 
