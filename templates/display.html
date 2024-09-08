@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Tags Display</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .image-container img {
+            max-width: 400px;
+            max-height: 400px;
+            display: flex;
+        }
+
+        .tags {
+            display: inline-block;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 2px;
+            margin: 2px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        {% for image in images_data %}
+        <tr>
+            <td>
+                <div class="image-container">
+                    <h2>{{ image.filename }}</h2>
+                    <img src="/images/{{ image.filename }}" alt="{{ image.filename }}">
+                </div>
+            </td>
+            <td>
+                <div class="tags">
+                    {% for tag, score in image.tagscores %}
+                    <span class="tag">{{ tag }}: {{ score }}</span>
+                    {% endfor %}
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
